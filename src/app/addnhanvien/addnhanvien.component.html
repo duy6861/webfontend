@@ -1,0 +1,52 @@
+
+<form [formGroup]="formaddnhanvien">
+  <h2>ADD NHÂN VIÊN</h2>
+<div>
+  <label for="fname" style="color: rgb(29, 178, 216);">First name:</label><br>
+  <input type="text"  name="fname" size="75" formControlName="firstname"><br>
+</div>
+<div>
+  <label for="fname" style="color: rgb(29, 178, 216);">Last name:</label><br>
+  <input type="text"  name="lname" size="75" formControlName="lastname"><br>
+</div>
+<div>
+  <label for="fname" style="color: rgb(29, 178, 216);">Age:</label><br>
+  <input type="text"  name="age" size="75" formControlName="age"><br>
+</div>
+
+<div>
+
+  <label for="fname" style="color: rgb(29, 178, 216);">Phone</label><br>
+  <input type="text"  name="phone" size="75" formControlName="phone"><br>
+</div>
+<div>
+
+  <label for="lname " style="color: rgb(29, 178, 216);" >Salary</label><br>
+  <input type="text"  name="salary" size="75" formControlName="salary"><br>
+</div>
+<div>
+  <label for="fname" style="color: rgb(29, 178, 216);">Sex</label><br>
+  <select id="cars" name="carlist" form="carform" formControlName="sex">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+</div>
+<div>
+
+  <label for="lname " style="color: rgb(29, 178, 216);" >Status</label><br>
+  <input type="checkbox"  name="status" size="75" formControlName="status" ><br><br><br>
+</div>
+
+<!-- <div>
+
+ <button type="submit" (click)="add(formaddnhanvien.value)" > <a class="nav-link" href="choc">ADD</a></button>
+</div> -->
+<div class="my-2">
+                  <a href="#" class="btn btn-secondary btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
+                    <button type="submit" class="text" (click)="add(formaddnhanvien.value)" style="background-color: cornflowerblue;"> <a class="nav-link" href="choc" style="color: cornsilk;">ADD</a></button>
+                  </a>
+                </div>
+</form>

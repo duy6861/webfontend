@@ -1,0 +1,113 @@
+
+
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h5 class="m-0 font-weight-bold text-primary">Thông Tin Nhân Viên</h5>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <div id="dataTable_filter" class="dataTables_filter">
+            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable">
+            </label></div>
+          <tr style="color: cornflowerblue; font-weight: bold; font-size: large;">
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Phone</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Salary</th>
+            <th>status</th>
+            <th colspan="2" style="text-align: center;">CUSTOM</th>
+
+            <!-- <th>Start date</th>
+            <th>Salary</th> -->
+           </tr>
+        </thead>
+        <tbody *ngFor="let nhanvien of nhanvienlist ">
+          <tr>
+            <td>{{ nhanvien.firstName }}</td>
+            <td>{{ nhanvien.lastName }}</td>
+            <td>{{nhanvien.phone }}</td>
+            <td>{{ nhanvien.age }}</td>
+            <td>{{ nhanvien.sex }}</td>
+            <td>{{ nhanvien.salary }}</td>
+            <td>{{ nhanvien.status}}</td>
+            <td><button style="color: b; background-color: crimson;" (click)="delete($event, nhanvien)">Delete</button></td>
+            <td><button (click)="edit($event, nhanvien)" (dblclick)="clearState()">Edit</button></td>
+          </tr>
+
+
+
+        <div *ngIf="editState && nhanvienToEdit.id== nhanvien.id">
+        <form [formGroup]="formupdate">
+          <h2>ADD NHÂN VIÊN</h2>
+        <div>
+          <label for="fname" style="color: rgb(29, 178, 216);">First name:</label><br>
+          <input type="text"  name="fname" size="75" formControlName="firstname" placeholder="" [(ngModel)]="nhanvien.firstName"><br>
+        </div>
+        <div>
+          <label for="fname" style="color: rgb(29, 178, 216);">Last name:</label><br>
+          <input type="text"  name="lname" size="75" formControlName="lastname" placeholder="" [(ngModel)]="nhanvien.lastName"><br>
+        </div>
+        <div>
+          <label for="fname" style="color: rgb(29, 178, 216);">Age:</label><br>
+          <input type="text"  name="age" size="75" formControlName="age" placeholder="" [(ngModel)]="nhanvien.age"><br>
+        </div>
+
+        <div>
+
+          <label for="fname" style="color: rgb(29, 178, 216);">Phone</label><br>
+          <input type="text"  name="phone" size="75" formControlName="phone" placeholder="" [(ngModel)]="nhanvien.phone"><br>
+        </div>
+        <div>
+
+          <label for="lname " style="color: rgb(29, 178, 216);" >Salary</label><br>
+          <input type="text"  name="salary" size="75" formControlName="salary" placeholder="" [(ngModel)]="nhanvien.salary"><br>
+        </div>
+        <div>
+          <label for="fname" style="color: rgb(29, 178, 216);">Sex</label><br>
+          <select id="cars" name="carlist" form="carform" formControlName="sex" placeholder="" [(ngModel)]="nhanvien.sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div>
+
+          <label for="lname " style="color: rgb(29, 178, 216);" >Status</label><br>
+          <input type="checkbox"  name="status" size="75" formControlName="status" ><br><br><br>
+        </div>
+
+        <div>
+
+         <button type="submit" (click)="update(formupdate.value, nhanvien)" > <a class="nav-link" href="choc">UPDATE</a></button>
+         <button> <a class="nav-link" href="choc">Back</a></button>
+        </div>
+
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      </tbody>
+      <button class="nav-item">
+        <a class="nav-link" href="addnhanvien">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Add staff</span></a>
+      </button>
+      </table>
+
+    </div>
+  </div>
+</div>
+
