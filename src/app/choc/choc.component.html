@@ -42,7 +42,7 @@
 
         <div *ngIf="editState && nhanvienToEdit.id== nhanvien.id">
         <form [formGroup]="formupdate">
-          <h2>ADD NHÂN VIÊN</h2>
+          <h2>UPDATE NHÂN VIÊN</h2>
         <div>
           <label for="fname" style="color: rgb(29, 178, 216);">First name:</label><br>
           <input type="text"  name="fname" size="75" formControlName="firstname" placeholder="" [(ngModel)]="nhanvien.firstName"><br>
